@@ -12,11 +12,11 @@ function Anagram(word) {
 
 Anagram.prototype.matches = function (words) {
     var motAlpha = word.split("").sort().join(); //décompose, tri et reforme une chaine de caractère.
-    var motAlphaTaille = word.length;
+    var motAlphaTaille = words.length;
     var i = 0;
     
-    for (i; ) {
-        
+    for (i; i <= motAlphaTaille; i++) {
+       
     }
 
 }
