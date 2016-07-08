@@ -11,18 +11,67 @@ function Anagram(word) {
 }
 
 Anagram.prototype.matches = function (words) {
-	var i = 0;
-	var tailleMot = words.lenght;
-
-	function anagram(words){
-		for (i; i++) {
-			tailleMot = i;
-			return i;
-		}	
-
-		if (i.indexOf == words){
-			return i;
-		}
-	}
+    var motAlpha = word.split("").sort().join(); //décompose, tri et reforme une chaine de caractère.
+    var motAlphaTaille = word.length;
+    var i = 0;
+    
+    for (i; ) {
+        
+    }
 
 }
+    
+    
+    
+    
+    
+    
+    
+    
+
+/*function trierMotAlpha(words) { //trier par odre alphabétique le mot donné.
+    var tabMotAlpha = words.split(""); //décompose words en un tableau de lettre.
+    var result = tabMotAlpha.sort(); // Tri tabMotAlpha (words) par odre alphabétique.
+    return = result;
+}
+
+function decomposeListe(matches) {
+    var i = 0;
+
+    for (i; i++) {
+        var i = matches.split("");
+        var result = matches.sort();
+        return = result;
+    }
+}
+
+function comparaison {
+    if (words === i) {
+        return = i;
+    }
+}*/
+    
+    
+    
+/*function trierMotAlpha(words) { //trier par odre alphabétique le mot donné.
+    var tabMotAlpha = words.split(""); //décompose words en un tableau de lettre.
+    var motTrier = tabMotAlpha.sort(); // Tri tabMotAlpha (words) par odre alphabétique.
+    var motRecompose = motTrier; //Reforme la string.
+    var i = 0;
+    
+    for (i; ) {
+        
+    }
+    
+}*/
+
+/*function trierMotAlpha(words) {
+    var motAlpha = words.split("").sort().join(); //décompose, tri et reforme une chaine de caractère.
+    var motAlphaTaille = words.length;
+    var i = 0;
+    
+    for (i; ) {
+        
+    }
+    
+}*/
