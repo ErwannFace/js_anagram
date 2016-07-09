@@ -24,7 +24,7 @@ Anagram.prototype.countChar = function (str) {
 }
 
 Anagram.prototype.compareTables = function (table1,table2) {
-	for (var x in table1) {	if (! table2[x] || table1[x] !== table2[x]) { return false; }	}
-	for (var x in table2) {	if (! table1[x] || table2[x] !== table1[x]) { return false; }	}
+	for (var x in table1) {	if (! table2[x] || table1[x] !== table2[x]) { return false; } }
+	for (var x in table2) {	if (! table1[x]) { return false; } }
 	return true;
 }
