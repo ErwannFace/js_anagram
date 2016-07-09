@@ -13,15 +13,11 @@ function Anagram(word) {
 Anagram.prototype.matches = function (words) {
 	if (typeof words == 'string') { words = arguments; }
 	var anagramsList = [];
-	var anagramsListIndex = 0;
 	var tableRef = this.countChar(this.word)
 	for (var i = 0; i < words.length; i++) {
 		if (this.word.toLowerCase() !== words[i].toLowerCase()) {
 			var tableWord = this.countChar(words[i]);
-			if (this.compareTables(tableRef,tableWord)) {
-				anagramsList[anagramsListIndex] = words[i];
-				anagramsListIndex++;
-			}
+			if (this.compareTables(tableRef,tableWord)) { anagramsList.push(words[i]); }
 		}
 	}
 	return anagramsList;
