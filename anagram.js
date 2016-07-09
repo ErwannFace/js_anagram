@@ -8,8 +8,9 @@ Anagram.prototype.matches = function (words) {
 	var tableRef = this.countChar(this.word)
 	for (var i = 0; i < words.length; i++) {
 		if (this.word.toLowerCase() !== words[i].toLowerCase()) {
-			var tableWord = this.countChar(words[i]);
-			if (this.compareTables(tableRef,tableWord)) { anagramsList.push(words[i]); }
+			if (this.compareTables(tableRef,this.countChar(words[i]))) {
+				anagramsList.push(words[i]);
+			}
 		}
 	}
 	return anagramsList;
