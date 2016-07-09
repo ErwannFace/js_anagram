@@ -1,14 +1,6 @@
-//
-// This is only a SKELETON file for the "Anagram" exercise. It's been provided as a
-// convenience to get you started writing code faster.
-// Make sure to look at test.script.js--that should give you some hints about what is
-// expected here.
-
 'use strict';
 
-function Anagram(word) {
-  this.word = word;
-}
+function Anagram(word) { this.word = word; }
 
 Anagram.prototype.matches = function (words) {
 	if (typeof words == 'string') { words = arguments; }
@@ -33,11 +25,7 @@ Anagram.prototype.countChar = function (str) {
 }
 
 Anagram.prototype.compareTables = function (table1,table2) {
-	for (var x in table1) {
-		if (! table2[x] || table1[x] !== table2[x]) { return false; }
-	}
-	for (var x in table2) {
-		if (! table1[x] || table2[x] !== table1[x]) { return false; }
-	}
+	for (var x in table1) {	if (! table2[x] || table1[x] !== table2[x]) { return false; }	}
+	for (var x in table2) {	if (! table1[x] || table2[x] !== table1[x]) { return false; }	}
 	return true;
 }
