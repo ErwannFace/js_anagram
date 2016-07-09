@@ -27,14 +27,8 @@ Anagram.prototype.countChar = function (str) {
 	var table = [];
 	for (var i = 0; i < str.length; i++) {
 		var index = str.charAt(i).toLowerCase();
-		if (! table[index]) {
-			table[index] = 1;
-		} else {
-			table[index]++;
-		}
+		table[index] = (table[index])?table[index]+1:1;
 	}
-	console.log(str);
-	console.log(table);
 	return table;
 }
 
