@@ -14,4 +14,23 @@ Anagram.prototype.matches = function (words) {
 //
 // YOUR CODE GOES HERE
 //
+	for (var i = 0; i < words.length; i++){
+		var mot = words[i];
+		// var motinverser = mot.reverse;
+		// console.log("valeur de word :"+ this.word);
+		// console.log("valeur de mot :"+ mot);
+		if(mot === this.word){
+
+		console.log("matches!");
+
+		}
+
+		else{
+
+		console.log("no matches!");
+
+		}
+
+	}
+	
 }
