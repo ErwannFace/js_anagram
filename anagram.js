@@ -7,16 +7,27 @@
 'use strict';
 
 function Anagram(word) {
-  this.word = word;
+    this.word = word;
+    this.mot = this.trier(this.word);
+}
+
+Anagram.prototype.trier = function (trie) {
+    var motAlpha = trie.toLowerCase().split().sort().join("");
+    /* ===
+    var motAlpha = this.trie.toLowerCase();
+    var motAlpha = motAlpha.split("");
+    var motAlpha = motAlpha.sort();
+    var motAlpha = motAlpha.join(""); */
+    return motAlpha;
 }
 
 Anagram.prototype.matches = function (words) {
-    var motAlpha = word.split("").sort().join(); //décompose, tri et reforme une chaine de caractère.
     var motAlphaTaille = words.length;
     var i = 0;
-    
+
     for (i; i <= motAlphaTaille; i++) {
-       
+        var toto = this.trier(words[0]);
+        toto === this.mot;
     }
 
 }
