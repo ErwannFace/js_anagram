@@ -28,12 +28,13 @@ function Anagram(word) {
 		//
 		//J'impose une condition 
 		//
-		if(mot != this.word){
+		if(mot !== this.word){
 
 			console.log("no matches!");
 
 			if(mot === this.word){
-				resultat.push(mot);
+
+						resultat.push(words[i]);
 			console.log("Anagram!:" + resultat);
 			}
 		}
