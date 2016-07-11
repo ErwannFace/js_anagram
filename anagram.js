@@ -12,7 +12,7 @@ function Anagram(word) {
 }
 
 Anagram.prototype.trier = function (trie) {
-    var motAlpha = trie.toLowerCase().split().sort().join("");
+    var motAlpha = trie.toLowerCase().split("").sort().join("");
     /* ===
     var motAlpha = this.trie.toLowerCase();
     var motAlpha = motAlpha.split("");
