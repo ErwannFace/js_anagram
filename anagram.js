@@ -26,17 +26,16 @@ Anagram.prototype.matches = function (words) {
 
     if (typeof words == "string") {
             words = arguments;
-        }
+        } //Permet de faire passer la string en "tableau"
 
     var matches = []; //variable pour tableau final
     var i = 0; //var pour parcourir notre tableau
-    var tailleTableau = words.length; //calculer la longueur du tableau
 
-        for (i; i < tailleTableau; i++) { //condition pour parcourir le tableau
-            if (words[i].toLowerCase() != this.word.toLowerCase()) {
-                var motTabTrie = this.trier(words[i]);//ligne pour trier chaque index du tableau
-                if (motTabTrie === this.mot) {
-
+        for (i; i < words.length; i++) { /*condition pour parcourir le tableau
+            avec l'argument de taille pour ne pas qu'il aille plus loin que la longueur du tableau*/
+            if (words[i].toLowerCase() != this.word.toLowerCase()) {/*comparaison entre Maj
+                et minuscule (pour le test Banana)*/
+                if (this.trier(words[i]) === this.mot) {
                 //condition de comparaison entre motAlpha trié et motTableau trié
                 matches.push(words[i]);//ajout des anagrammes au tableau final
             }
