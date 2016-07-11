@@ -9,11 +9,12 @@
 function Anagram(word) {
     this.word = word;
     this.mot = this.trier(this.word);
+    //ligne permettant de trier le motAlpha
 }
 
 Anagram.prototype.trier = function (trie) {
     var motAlpha = trie.toLowerCase().split("").sort().join("");
-    /* ===
+    /* fonction universelle pour trier un mot ===
     var motAlpha = this.trie.toLowerCase();
     var motAlpha = motAlpha.split("");
     var motAlpha = motAlpha.sort();
@@ -22,21 +23,24 @@ Anagram.prototype.trier = function (trie) {
 }
 
 Anagram.prototype.matches = function (words) {
-    var motAlphaTaille = words.length;
-    var nouveauTab = [];
-    var i = 0;
+    var motAlphaTaille = words.length; //calculer la longueur du tableau
+    var matches = []; //variable pour tableau final
+    var i = 0; //var pour parcourir notre tableau
 
-    for (i; i <= motAlphaTaille; i++) {
-        var trieTab = this.trier(words[0]);
-        /*var toto === this.mot;*/
-        if (trieTab === this.mot) {
-            return nouveauTab.push(trieTab);
-        }
-        else {
-            return [];
-        }
+    if (typeof words === "string") {
+        words = arguments;
     }
 
+    for (i; i < motAlphaTaille; i++) { //condition pour parcourir le tableau
+        var motTabTrie = this.trier(words[i]);//ligne pour trier chaque index du tableau
+
+        if (motTabTrie === this.mot && words[i].toLowerCase() != this.word.toLowerCase()) {
+            //condition de comparaison entre motAlpha trié et motTableau trié
+            matches.push(words[i]);//ajout des anagrammes au tableau final
+        }
+    }
+    alert("c." + matches);
+    return matches;//return le tableau final
 }
     
     
