@@ -8,29 +8,45 @@
 
 function Anagram(word) {
   this.word = word;
+  this.mot = this.filtrer(this.word);
 }
 
-Anagram.prototype.matches = function (words) {
-//
-// YOUR CODE GOES HERE
-//
-	for (var i = 0; i < words.length; i++){
+
+// //#1
+ Anagram.prototype.matches = function (words) {
+// //
+// // YOUR CODE GOES HERE
+// //
+	var resultat =[]; //faire pour comparer les éléments.
+
+	//
+	//Je fais une boucle pour parcourir mon table avec For
+	//
+	for (var i = 0; i < words.length; i++){ 
+
 		var mot = words[i];
-		// var motinverser = mot.reverse;
-		// console.log("valeur de word :"+ this.word);
-		// console.log("valeur de mot :"+ mot);
-		if(mot === this.word){
+		//
+		//J'impose une condition 
+		//
+		if(mot != this.word){
 
-		console.log("matches!");
+			console.log("no matches!");
 
+			if(mot === this.word){
+				resultat.push(mot);
+			console.log("Anagram!:" + resultat);
+			}
 		}
+	} 
 
-		else{
-
-		console.log("no matches!");
-
-		}
-
-	}
+return resultat; //permettre à jasmin d'avoir un retour du résultat pour comparer.
 	
+}
+
+//#2
+Anagram.prototype.filtrer = function (filtre){
+
+var inv = this.word.toLowerCase().split("").sort().join("");
+	console.log(inv);
+	 return inv;
 }
