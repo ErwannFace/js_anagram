@@ -27,7 +27,7 @@ Anagram.prototype.matches = function (words) {
 
     for (i; i <= motAlphaTaille; i++) {
         var toto = this.trier(words[0]);
-        toto === this.mot;
+        var toto === this.mot;
     }
 
 }
