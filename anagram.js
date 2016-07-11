@@ -23,21 +23,25 @@ Anagram.prototype.trier = function (trie) {
 }
 
 Anagram.prototype.matches = function (words) {
-    var matches = []; //variable pour tableau final
-    var i = 0; //var pour parcourir notre tableau
 
-        if (typeof words == "string") {
+    if (typeof words == "string") {
             words = arguments;
         }
 
-    var motAlphaTaille = words.length; //calculer la longueur du tableau
-        for (i; i < motAlphaTaille; i++) { //condition pour parcourir le tableau
-            var motTabTrie = this.trier(words[i]);//ligne pour trier chaque index du tableau
+    var matches = []; //variable pour tableau final
+    var i = 0; //var pour parcourir notre tableau
+    var tailleTableau = words.length; //calculer la longueur du tableau
 
-            if (motTabTrie === this.mot && words[i].toLowerCase() !== this.word.toLowerCase()) {
+        for (i; i < tailleTableau; i++) { //condition pour parcourir le tableau
+            if (words[i].toLowerCase() != this.word.toLowerCase()) {
+                var motTabTrie = this.trier(words[i]);//ligne pour trier chaque index du tableau
+                if (motTabTrie === this.mot) {
+
                 //condition de comparaison entre motAlpha trié et motTableau trié
                 matches.push(words[i]);//ajout des anagrammes au tableau final
             }
+        }
+
         }
         /*alert("c." + matches); Permet de voir si je retourne bien mon putain de tableau*/
         return matches;//return le tableau final
