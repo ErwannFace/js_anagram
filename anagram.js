@@ -23,77 +23,22 @@ Anagram.prototype.trier = function (trie) {
 }
 
 Anagram.prototype.matches = function (words) {
-    var motAlphaTaille = words.length; //calculer la longueur du tableau
     var matches = []; //variable pour tableau final
     var i = 0; //var pour parcourir notre tableau
 
-    if (typeof words === "string") {
-        words = arguments;
-    }
-
-    for (i; i < motAlphaTaille; i++) { //condition pour parcourir le tableau
-        var motTabTrie = this.trier(words[i]);//ligne pour trier chaque index du tableau
-
-        if (motTabTrie === this.mot && words[i].toLowerCase() != this.word.toLowerCase()) {
-            //condition de comparaison entre motAlpha trié et motTableau trié
-            matches.push(words[i]);//ajout des anagrammes au tableau final
+        if (typeof words == "string") {
+            words = arguments;
         }
-    }
-    alert("c." + matches);
-    return matches;//return le tableau final
+
+    var motAlphaTaille = words.length; //calculer la longueur du tableau
+        for (i; i < motAlphaTaille; i++) { //condition pour parcourir le tableau
+            var motTabTrie = this.trier(words[i]);//ligne pour trier chaque index du tableau
+
+            if (motTabTrie === this.mot && words[i].toLowerCase() !== this.word.toLowerCase()) {
+                //condition de comparaison entre motAlpha trié et motTableau trié
+                matches.push(words[i]);//ajout des anagrammes au tableau final
+            }
+        }
+        /*alert("c." + matches); Permet de voir si je retourne bien mon putain de tableau*/
+        return matches;//return le tableau final
 }
-    
-    
-    
-    
-    
-    
-    
-    
-
-/*function trierMotAlpha(words) { //trier par odre alphabétique le mot donné.
-    var tabMotAlpha = words.split(""); //décompose words en un tableau de lettre.
-    var result = tabMotAlpha.sort(); // Tri tabMotAlpha (words) par odre alphabétique.
-    return = result;
-}
-
-function decomposeListe(matches) {
-    var i = 0;
-
-    for (i; i++) {
-        var i = matches.split("");
-        var result = matches.sort();
-        return = result;
-    }
-}
-
-function comparaison {
-    if (words === i) {
-        return = i;
-    }
-}*/
-    
-    
-    
-/*function trierMotAlpha(words) { //trier par odre alphabétique le mot donné.
-    var tabMotAlpha = words.split(""); //décompose words en un tableau de lettre.
-    var motTrier = tabMotAlpha.sort(); // Tri tabMotAlpha (words) par odre alphabétique.
-    var motRecompose = motTrier; //Reforme la string.
-    var i = 0;
-    
-    for (i; ) {
-        
-    }
-    
-}*/
-
-/*function trierMotAlpha(words) {
-    var motAlpha = words.split("").sort().join(); //décompose, tri et reforme une chaine de caractère.
-    var motAlphaTaille = words.length;
-    var i = 0;
-    
-    for (i; ) {
-        
-    }
-    
-}*/
