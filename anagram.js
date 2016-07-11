@@ -5,7 +5,7 @@ function Anagram(word) { this.word = word; }
 Anagram.prototype.matches = function (words) {
 	if (typeof words == 'string') { words = arguments; }
 	var anagramsList = [];
-	var tableRef = this.countChar(this.word)
+	var tableRef = this.countChar(this.word);
 	for (var i = 0; i < words.length; i++) {
 		if (this.word.toLowerCase() !== words[i].toLowerCase() && this.compareTables(tableRef,this.countChar(words[i]))) {
 			anagramsList.push(words[i]);
