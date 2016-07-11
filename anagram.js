@@ -23,11 +23,18 @@ Anagram.prototype.trier = function (trie) {
 
 Anagram.prototype.matches = function (words) {
     var motAlphaTaille = words.length;
+    var nouveauTab = [];
     var i = 0;
 
     for (i; i <= motAlphaTaille; i++) {
-        var toto = this.trier(words[0]);
-        var toto === this.mot;
+        var trieTab = this.trier(words[0]);
+        /*var toto === this.mot;*/
+        if (trieTab === this.mot) {
+            return nouveauTab.push(trieTab);
+        }
+        else {
+            return [];
+        }
     }
 
 }
