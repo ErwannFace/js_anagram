@@ -1,27 +1,19 @@
-var wordtocompare = "";
-var compare = [];
-
 function sortstr(x) {
-	x.split('').sort().join('');
+	 return x.split("").sort().join("").toLowerCase();
 }
 
 
 function anagram(word, arraytocompare) {
-	var sortedword = word.sortstr();
-	var sortedarray = [];
 	var anagrams = [];
-	for (var i=0; i<=arraytocompare.length-1; i++) {
-		sortedarray.push(arraytocompare[i].sortstr());
+	for (var i=0; i<arraytocompare.length; i++) {
+		if (sortstr(arraytocompare[i]) == sortstr(word) && arraytocompare[i].toLowerCase() != word.toLowerCase()) {
+			anagrams.push(arraytocompare[i]);
 		}
-	return sortedarray;
-	}
-
-	for (var i=0; i<= sortedarray.length-1; i++) {
-		if (sortedarray[i] === sortedword) {
-			anagrams.push(sortedarray[i]);
-		}
-	return anagrams;
-	}
-	}
-
+	}	
+	alert("Liste des anagrammes : " + anagrams);
 }
+
+var word = prompt("Entrez ze mot");
+var compare = prompt("Entrez les mots à comparer au format mot1, mot2, mot3, etc.");
+var compare = compare.split(", ");
+anagram(word,compare);
