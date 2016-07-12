@@ -6,12 +6,26 @@
 
 'use strict';
 
-function Anagram(word) {
-  this.word = word;
+function Anagram(mot) {
+   this.mot = mot;
 }
-
-Anagram.prototype.matches = function (words) {
-//
-// YOUR CODE GOES HERE
-//
+Anagram.prototype.matches = function Anagram (mots) {
+   var matches = [];    
+   for (var i = 0; i < mots.length; i++) {
+       var motAtuel = mots[i];        
+	   if (motAtuel.length == this.mot.length && motAtuel != this.mot) {
+			var lettresMot = motAtuel.split('').sort();
+			var lettresMotEgual = this.mot.split('').sort();            
+			var isMatch = true;            
+			for (var j = 0; j < lettresMot.length; j++) {
+				if (lettresMot[j] != lettresMotEgual[j]) {
+				isMatch = false;
+				}
+			}            
+			if (isMatch) {
+				matches.push(motAtuel);
+			}
+		}   
+	}
+	return matches;
 }
