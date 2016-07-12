@@ -12,44 +12,40 @@ function Anagram(word) {
 }
 
 
-// //#1
+
  Anagram.prototype.matches = function (words) {
-// //
-// // YOUR CODE GOES HERE
-// //
+
 	var cle_mot = this.trier(this.word);
 	var resultat =[]; //faire pour comparer les éléments.
 
 	//Je fais une boucle pour parcourir mon table avec For
 	for (var i = 0; i < words.length; i++) { 
-		var mot = words[i];
-		var inversee = this.trier(mot);
+		var mot_tab = words[i];
+		var trier_mot = this.trier(mot_tab);
 		//
-		//J'impose une condition 
-		//
-		if(inversee === cle_mot && mot != this.word.toUpperCase()) {
+		if(trier_mot === cle_mot && mot_tab != this.word.toUpperCase()) {
 
-			console.log("no matches!"+ mot);
+			/*console.log("no matches!"+ trier_mot);*/
 			
-			resultat.push(mot);
+			resultat.push(mot_tab);
 
-			console.log("Anagram!:" + resultat);
+			/*console.log("Anagram!:" + resultat);*/
 
 
 		}
 	} 
 
-return resultat; //permettre à jasmin d'avoir un retour du résultat pour comparer.
-	
+     return resultat; 
+     
 }
 
 //#2
 Anagram.prototype.trier = function (words){
-// var mot_cle = this.word;
-var mot_cle= words.toUpperCase();
- mot_cle= mot_cle.split("");
- mot_cle= mot_cle.sort();
- mot_cle= mot_cle.join("");
-	console.log(mot_cle);
+    
+    var mot_cle = words.toUpperCase();
+    //Ici je hache, je trie puis je reforme une nouvelle chaîne de caractère
+    mot_cle = mot_cle.split("").sort().join("");
+    //Console.log pour avoir une vision de la sortie
+	/*console.log(mot_cle); */
 	 return mot_cle;
 }
