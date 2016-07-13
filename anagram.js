@@ -20,6 +20,7 @@ else {
     return unAnagrams(this.mot, mot);
     }, this);    
 }
+// fonction de filtrage
 return mots.filter(function(mot) {
     return unAnagrams(this.mot, mot);
 }, this);
@@ -28,6 +29,7 @@ return mots.filter(function(mot) {
     deuxiemeMots = deuxiemeMots.toLowerCase();
     return premierMots !== deuxiemeMots && memeLettre(premierMots, deuxiemeMots);
 }
+// fonction de triage
 function memeLettre(premierMots, deuxiemeMots) {
     return trie(premierMots) == trie(deuxiemeMots);
 }function trie(str) {
