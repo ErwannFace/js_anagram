@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Verif3</title>
+</head>
+<body>
+
+<script>
+/*str = "niche";
+document.write(str.substr(0,1));*/
+
+
+
+function anagram(str1, str2) {
+  /*test de départ sur la comparaison du type et de la longueur des paramètres de ma fonction*/
+  if (typeof str1 === 'string' && typeof str2 === 'string' && str1 === str2) {
+    return true;
+  } else 
+        if (str1.length !== str2.length) {
+            return false;
+           }
+  /*initialisation des variables (globales) avant passage dans ma boucle*/
+  var c = null; 
+  var i = 0;
+  var n = str1.length; 
+  var matches = 0;
+  var idx = 0;
+
+  while(i < n) { /*parcours de l' ensemble des éléments constitutifs de ma chaîne de caractères*/
+
+    c = str1.charAt(i); /*récupération des caractères successifs de ma  première chaîne*/ 
+    idx = str2.indexOf(c); /*pour indexation des caractères prélevés dans ma seconde chaine*/
+
+    if (idx < 0) {
+      return false;
+    } /*idx vaudrait -1 si on lui fournit au moins une chaine vide ou un caractère différent de sa constitution*/
+    
+    matches += 1; /*incrémentation de matches au sortir des indexations successives*/
+    i ++; /*pour continuer à parcourir instructions de la boucle*/
+  }
+    
+    return matches === n; /*retourne un booléen (true or false) une fois la comparaison terminée en vérifiant la concordance entre */
+}
+/*document.write(anagram('ien h','chien'));*/
+</script>
+
+</body>
+</html>
