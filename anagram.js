@@ -16,6 +16,7 @@ if(typeof(mots) === "string") {
 }
 // L'opérateur typeof renvoie une chaîne qui indique le type de son opérande.
 else {
+	//La méthode filter() crée et retourne un nouveau tableau contenant tous les éléments du tableau d'origine pour lesquels la fonction callback retourne true
     return mots.filter(function(mot) {
     return unAnagrams(this.mot, mot);
     }, this);    
@@ -34,3 +35,12 @@ function memeLettre(premierMots, deuxiemeMots) {
     return trie(premierMots) == trie(deuxiemeMots);
 }function trie(str) {
     return str.split('').sort().join('');
+
+ 
+
+//La méthode join() réunit tous les éléments d'un tableau dans une chaine de caractères
+
+ 
+
+//La méthode sort() trie les éléments d'un tableau, dans ce même tableau, et renvoie le tableau. Le tri n'est pas forcément stable. Le tri s'effectue par défaut selon les points de code Unicode de la chaine de caractères.
+//La méthode split() permet de diviser une chaîne de caractères à partir d'un séparateur pour fournir un tableau de sous-chaînes
