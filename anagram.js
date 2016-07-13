@@ -7,11 +7,31 @@
 'use strict';
 
 function Anagram(word) {
-  this.word = word;
+    this.word = word;
+    this.mot = this.trier(this.word);
+}
+
+Anagram.prototype.trier = function (trie) {
+    var motAlpha = trie.toLowerCase().split("").sort().join("");
+    return motAlpha;
 }
 
 Anagram.prototype.matches = function (words) {
-//
-// YOUR CODE GOES HERE
-//
+
+    if (typeof words == "string") {
+        words = arguments;
+    }
+
+    var matches = [];
+    var i = 0;
+
+    for (i; i < words.length; i++) {
+        if (words[i].toLowerCase() != this.word.toLowerCase()) {
+            if (this.trier(words[i]) === this.mot) {
+                matches.push(words[i]);
+            }
+        }
+    }
+
+    return matches;
 }
