@@ -11,7 +11,20 @@ function Anagram(word) {
 }
 
 Anagram.prototype.matches = function (words) {
-//
-// YOUR CODE GOES HERE
-//
+ return words.filter(function(word) {
+   return lesAnagram(this.word, word);
+ }, this);
 }
+function lesAnagram(word1, word2) {
+ word1 = word1.toUpperCase();
+ word2 = word2.toUpperCase();
+ return word1 != word2 && MemeMot(word1, word2);
+}
+function tri(word) {
+ return word.split('').sort().join('');
+}
+
+function MemeMot(word1, word2) {
+ return tri(word1) == tri(word2);
+}
+
