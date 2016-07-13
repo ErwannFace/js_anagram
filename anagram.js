@@ -11,7 +11,6 @@ function Anagram(word) {
 }
 
 Anagram.prototype.matches = function (words) {
-//
-// YOUR CODE GOES HERE
-//
+var result = [];
+return result;
 }
