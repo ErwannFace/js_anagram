@@ -8,10 +8,27 @@
 
 function Anagram(word) {
   this.word = word;
+  this.wordCompare = this.generateComparator(word);
+  
 }
 
 Anagram.prototype.matches = function (words) {
-//
-// YOUR CODE GOES HERE
-//
+	var tab = [];
+//			return tab;
+
+	for (var i=0;i<words.length;i++){
+		var mot = words[i];
+		var motCompare = this.generateComparator(mot);
+		if (mot.length == this.word.length){
+		if (motCompare == words){
+			tab.push(mot);
+		}
+		}
+	}
+
+	return tab;
 }
+	
+Anagram.prototype.generateComparator = function(word){
+	return word.toUpperCase().split("").sort().join();
+
