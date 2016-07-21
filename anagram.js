@@ -9,6 +9,7 @@
 function Anagram(word) {
   this.word = word;
   this.wordCompare = this.generateComparator(word);
+  
 }
 
 Anagram.prototype.matches = function (words) {
@@ -19,8 +20,9 @@ Anagram.prototype.matches = function (words) {
 		var mot = words[i];
 		var motCompare = this.generateComparator(mot);
 		if (mot.length == this.word.length){
-		if (motCompare
+		if (motCompare == words){
 			tab.push(mot);
+		}
 		}
 	}
 
